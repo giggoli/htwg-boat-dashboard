@@ -1,0 +1,34 @@
+{
+  "Meta": {
+    "version": 1.0
+  },
+  "time": {
+    "title": "Uhrzeit",
+    "description": "Python datetime string in iso format"
+  },
+  "ID": {
+    "title": "Fuellevel sensor",
+    "unit": "Uinteger",
+    "description": "Fuellevel sensor identifier default 1"
+  },
+  "FL": {
+    "title": "Fuellevel",
+    "unit": "%",
+    "description": "Fuellevel of the fuelcell tank"
+  },
+  "FA": {
+    "title": "Fuelamount",
+    "unit": "ml",
+    "description": "Fuelamount of the fuelcell tank"
+  },
+  "TEMP": {
+    "title": "Fuel temperature",
+    "unit": "Celsius",
+    "description": "Fuel temperature measured by fuel level sensor"
+  },
+  "ERROR": {
+    "title": "Fuellevel Error",
+    "unit": "Uinteger",
+    "description": "Fuel level sensor indicator 0=OK; 1=ERROR"
+  }
+}

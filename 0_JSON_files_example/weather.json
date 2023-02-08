@@ -1,0 +1,38 @@
+{
+    "Meta": {
+        "version": 1.0
+    },
+    "time": {
+        "title": "Uhrzeit",
+        "description": "Python datetime string in iso format"
+    },
+    "cur": {
+        "title": "Wetter"
+    },
+    "temp":  {
+        "title": "Temperatur",
+        "unit": "C"
+    },
+    "vis":  {
+        "title": "Sichtweite",
+        "unit": "%"
+    },
+    "w_spd":  {
+        "title": "Windstärke",
+        "unit": "m/s"
+    },
+    "w_deg": {
+        "title": "Windrichtung",
+        "unit": "Grad"
+    },
+    "w_gust": {
+        "title": "Windböen",
+        "unit": "m/s"
+    },
+    "sunrise":  {
+        "title": "Sonnenaufgang"
+    },
+    "sunset":  {
+        "title": "Sonnenuntergang"
+    }
+}

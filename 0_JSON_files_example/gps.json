@@ -1,0 +1,47 @@
+{
+    "Meta": {
+        "version": 1.0
+    },
+    "time": {
+        "title": "Uhrzeit",
+        "description": "Python datetime string in iso format"
+    },
+    "head": {
+        "title": "Heading",
+        "unit": "deg",
+        "description": "Actual vessel heading in degrees Ture"
+    },
+    "valid": {
+        "title": "Validity",
+        "description": "A-ok, V-invalid"
+    },
+    "lat": {
+        "title": "Latitude",
+        "unit": "deg",
+        "description": "current Latitude"
+    },
+    "ns": {
+        "title": "North/South"
+    },
+    "long": {
+        "title": "Longitude",
+        "unit": "deg",
+        "description": "current Longitude"
+    },
+    "ew": {
+        "title": "East/West"
+    },
+    "speed": {
+        "title": "Geschwindigkeit",
+        "unit:": "knt",
+        "description": "Speed over ground in knots"
+    },
+    "variat": {
+        "title": "Variation",
+        "unit": "deg",
+        "description": "Magnetic variation degrees (Easterly var. subtracts from true course)"
+    },
+    "variat_ew": {
+        "title": "Variation East/West"
+    }
+}

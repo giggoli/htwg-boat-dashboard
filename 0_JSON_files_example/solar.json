@@ -1,0 +1,242 @@
+{
+    "Meta": {
+        "version": 1.0
+    },
+    "time": {
+        "title": "Uhrzeit",
+        "description": "Python datetime string in iso format"
+    },
+    "Solar": {
+        "BV": {
+            "identifier": 1,
+            "title": "Battery voltage",
+            "unit": "V",
+            "description": "Battery voltage measured by solar generator"
+        },
+        "BC": {
+            "identifier": 2,
+            "title": "Battery current",
+            "unit": "A",
+            "description": "Battery current measured by solar generator"
+        },
+        "BT": {
+            "identifier": 3,
+            "title": "Battery temperature",
+            "unit": "Celsius",
+            "description": "Battery temperature measured by solar generator"
+        },
+        "CH": {
+            "identifier": 4,
+            "title": "Charger on/of",
+            "unit": "Uinteger",
+            "description": "Charger solar generator 1=ON; 4=OFF"
+        },
+        "CHM": {
+            "identifier": 5,
+            "title": "Charger mode",
+            "unit": "Uinteger",
+            "description": "Charger solar generator 0=Off;2=Fault;3=Bulk;4=Absorption;5=Float;6=Storage;7=Equalize;11=Other"
+        },
+        "PVV": {
+            "identifier": 6,
+            "title": "PV voltage",
+            "unit": "V",
+            "description": "Solar generator voltage"
+        },
+        "PVC": {
+            "identifier": 7,
+            "title": "PV Current",
+            "unit": "A",
+            "description": "Solar generator current"
+        },
+        "EQP": {
+            "identifier": 8,
+            "title": "Equalization pending",
+            "unit": "Uinteger",
+            "description": "0=No;1=Yes;2=Error;3=Unavailable"
+        },
+        "EQTR": {
+            "identifier": 9,
+            "title": "Equalization time remaining",
+            "unit": "seconds",
+            "description": "Equalization time remaining"
+        },
+        "ROCH": {
+            "identifier": 10,
+            "title": "Relay on Charger",
+            "unit": "Uinteger",
+            "description": "Relay on Charger 0=Open;1=Closed"
+        },
+        "SYSALRM": {
+            "identifier": 11,
+            "title": "System Alarm",
+            "unit": "Uinteger",
+            "description": "System Alarm 0=No alarm;2=Alarm"
+        },
+        "SYSAL": {
+            "identifier": 12,
+            "title": "Low voltage alarm",
+            "unit": "Uinteger",
+            "description": "Low battery voltage alarm 0=No alarm;2=Alarm"
+        },
+        "SYSAH": {
+            "identifier": 13,
+            "title": "High voltage alarm",
+            "unit": "Uinteger",
+            "description": "High battery voltage alarm 0=No alarm;2=Alarm"
+        },
+        "YTD": {
+            "identifier": 14,
+            "title": "Yield today",
+            "unit": "kWh",
+            "description": "Yield power today"
+        },
+        "MPTD": {
+            "identifier": 15,
+            "title": "Maximum charge power today",
+            "unit": "W",
+            "description": "Maximum charge power today"
+        },
+        "YYD": {
+            "identifier": 16,
+            "title": "Yield yesterday",
+            "unit": "kWh",
+            "description": "Yield power yesterday"
+        },
+        "MPYD": {
+            "identifier": 17,
+            "title": "Maximum charge power yesterday",
+            "unit": "W",
+            "description": "Maximum charge power yesterday"
+        },
+        "ERROR": {
+            "identifier": 18,
+            "title": "Error code",
+            "unit": "Uinteger",
+            "description": "0=No error;1=Battery temperature too high;2=Battery voltage too high;3=Battery temperature sensor miswired (+);4=Battery temperature sensor miswired (-);5=Battery temperature sensor disconnected;6=Battery voltage sense miswired (+);7=Battery voltage sense miswired (-);8=Battery voltage sense disconnected;9=Battery voltage wire losses too high;17=Charger temperature too high;18=Charger over-current;19=Charger current polarity reversed;20=Bulk time limit reached;22=Charger temperature sensor miswired;23=Charger temperature sensor disconnected;34=Input current too high"
+        },
+        "YPVP": {
+            "identifier": 19,
+            "title": "PV Power",
+            "unit": "W",
+            "description": "Yield PV power"
+        },
+        "UYPWR": {
+            "identifier": 20,
+            "title": "User yield power",
+            "unit": "kWh",
+            "description": "User yield power"
+        },
+        "MPPT": {
+            "identifier": 21,
+            "title": "MPP operation mode",
+            "unit": "Uinteger",
+            "description": "MPP mode 0=Off;1=Voltage/current limited;2=MPPT active;255=Not available"
+        }
+    },
+    "System": {
+        "SolSerial": {
+            "identifier": 1,
+            "title": "Serial (System)",
+            "unit": "String",
+            "description": "Serial number of solar generator"
+        },
+        "AIS": {
+            "identifier": 1,
+            "title": "Active input source",
+            "unit": "Integer",
+            "description": "Active input source 0=Unknown;1=Grid;2=Generator;3=Shore power;240=Not connected\n"
+        },
+        "SYSBV":
+        {
+            "identifier": 1,
+            "title": "Battery voltage",
+            "unit": "V",
+            "description": "System battery Voltage"
+        },
+        "SYSBC":
+        {
+            "identifier": 2,
+            "title": "Battery current",
+            "unit": "A",
+            "description": "System battery Current"
+        },
+        "SYSBP":
+        {
+            "identifier": 3,
+            "title": "Battery power",
+            "unit": "W",
+            "description": "System battery power"
+        },
+        "SYSSOC":
+        {
+            "identifier": 4,
+            "title": "State of charge",
+            "unit": "%",
+            "description": "Battery state of charge"
+        },
+        "SYSSTATE":
+        {
+            "identifier": 5,
+            "title": "Battery state",
+            "unit": "Uinteger",
+            "description": "State 0=idle;1=charging;2=discharging\n"
+        },
+        "SYSCAH":
+        {
+            "identifier": 6,
+            "title": "Consumed Amphours",
+            "unit": "Ah",
+            "description": "Battery consumed Amphours"
+        },
+        "SYST2G":
+        {
+            "identifier": 7,
+            "title": "Time to Go",
+            "unit": "seconds",
+            "description": "System time to go"
+        },
+        "PVCP":
+        {
+            "identifier": 1,
+            "title": "PV DC-coupled power",
+            "unit": "W",
+            "description": "PV DC-coupled power"
+        },
+        "PVCC":
+        {
+            "identifier": 2,
+            "title": "PV DC-coupled current",
+            "unit": "A",
+            "description": "PV DC-coupled current"
+        },
+        "SYSCP":
+        {
+            "identifier":1,
+            "title": "Charger power",
+            "unit": "W",
+            "description": "System Charger power"
+        },
+        "SYSPWR":
+        {
+            "identifier":1,
+            "title": "DC System Power",
+            "unit": "W",
+            "description": "DC System Power"
+        },
+        "BUSCC":
+        {
+            "identifier": 1,
+            "title": "Bus charge current",
+            "unit": "A",
+            "description": "Victron Bus charge power"
+        },
+        "BUSCP":
+        {
+            "identifier": 2,
+            "title": "Bus charge power",
+            "unit": "W",
+            "description": "Victron Bus charge power"
+        }
+    }
+}

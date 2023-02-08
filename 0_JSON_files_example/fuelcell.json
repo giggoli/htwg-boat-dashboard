@@ -1,0 +1,48 @@
+{
+    "Meta": {
+        "version": 1.0
+    },
+    "time": {
+        "title": "Uhrzeit",
+        "description": "Python datetime string in iso format"
+    },
+    "status_e_i": {
+        "title": "Error Indication (Status)"
+    },
+    "status_e_s": {
+        "title": "Error Status (Status)"
+    },
+    "SOC_e_i": {
+        "title": "Error Indication (SOC)"
+    },
+    "SOC_e_s": {
+        "title": "Error Status (SOC)"
+    },
+    "SOV_e_i": {
+        "title": "Error Indication (SOV)"
+    },
+    "SOV_e_s": {
+        "title": "Error Status (SOV)"
+    },
+    "SOP_e_i": {
+        "title": "Error Indication (SOP)"
+    },
+    "SOP_e_s": {
+        "title": "Error Status (SOP)"
+    },
+    "status": {
+        "title": "Status"
+    },
+    "SOC": {
+        "title": "Output Current",
+        "unit": "A"
+    },
+    "SOV": {
+        "title": "Output Voltage",
+        "unit": "V"
+    },
+    "SOP": {
+        "title": "Output Power",
+        "unit": "W"
+    }
+}

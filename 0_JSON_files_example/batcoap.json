@@ -1,0 +1,345 @@
+{
+    "Meta": {
+        "version": 1.0
+    },
+    "time": {
+        "title": "Uhrzeit",
+        "description": "Python datetime string in iso format"
+    },
+    "BSR":
+    {
+        "identifier": "AEC_State/RELAY",
+        "title": "RELAY",
+        "unit": "Binary",
+        "description": "State of the Battery Main Relay "
+    },
+    "BLVW":
+    {
+        "identifier": "AEC_State/Low_Voltage_Warning",
+        "title": "Low_Voltage_Warning",
+        "unit": "Binary",
+        "description": "State of Low Voltage Warning"
+    },
+    "BHVW":
+    {
+        "identifier": "AEC_State/High_Voltage_Warning",
+        "title": "High_Voltage_Warning",
+        "unit": "Binary",
+        "description": "State of High Voltage Warning"
+    },
+    "BORC":
+    {
+        "identifier": "AEC_State/Open_Relay_Crash",
+        "title": "Open_Relay_Crash",
+        "unit": "Binary",
+        "description": "State of Open Relay Crash"
+    },
+    "BORE":
+    {
+        "identifier": "AEC_State/Open_Relay_Error",
+        "title": "Open_Relay_Error",
+        "unit": "Binary",
+        "description": "State of Open Relay Error"
+    },
+    "SoC":
+    {
+        "identifier": "SoC",
+        "title": "SoC",
+        "unit": "%(Integer)",
+        "description": "State of Charge of the Battery"
+    },
+    "E_NE":
+    {
+        "identifier": "AEC_Errors/ERR_NO_ERROR",
+        "title": "ERR_NO_ERROR",
+        "unit": "Binary",
+        "description": "Error state of Error No Error"
+    },
+    "E_ST":
+    {
+        "identifier": "AEC_Errors/ERR_SELFTEST",
+        "title": "ERR_SELFTEST",
+        "unit": "Binary",
+        "description": "Error state of Error Selftest"
+    },
+    "E_OC":
+    {
+        "identifier": "AEC_Errors/ERR_OVER_CURRENT",
+        "title": "ERR_OVER_CURRENT",
+        "unit": "Binary",
+        "description": "Error state of Error Over Current"
+    },
+    "E_OV":
+    {
+        "identifier": "AEC_Errors/ERR_OVER_VOLTAGE",
+        "title": "ERR_OVER_VOLTAGE",
+        "unit": "Binary",
+        "description": "Error state of Error Over Voltage"
+    },
+    "E_UV":
+    {
+        "identifier": "AEC_Errors/ERR_UNDER_VOLTAGE",
+        "title": "ERR_UNDER_VOLTAGE",
+        "unit": "Binary",
+        "description": "Error state of Error Under Voltage"
+    },
+    "E_D":
+    {
+        "identifier": "AEC_Errors/ERR_DIGOVLD",
+        "title": "ERR_DIGOVLD",
+        "unit": "Binary",
+        "description": "Error state of Error DIGOVLD"
+    },
+    "E_OUT":
+    {
+        "identifier": "AEC_Errors/ERR_OVER_UNDER_TEMPERATURE",
+        "title": "ERR_OVER_UNDER_TEMPERATURE",
+        "unit": "Binary",
+        "description": "Error state of Error Over Under Temperature"
+    },
+    "E_P":
+    {
+        "identifier": "AEC_Errors/ERR_PARAMINIT",
+        "title": "ERR_PARAMINIT",
+        "unit": "Binary",
+        "description": "Error state of Error Over PARAMINIT"
+    },
+    "E_C":
+    {
+        "identifier": "AEC_Errors/ERR_COMMUNICATION",
+        "title": "ERR_COMMUNICATION",
+        "unit": "Binary",
+        "description": "Error state of Error Communication"
+    },
+    "E_H":
+    {
+        "identifier": "AEC_Errors/ERR_HVIL",
+        "title": "ERR_ERR_HVIL",
+        "unit": "Binary",
+        "description": "Error state of Error HVIL"
+    },
+    "E_CP":
+    {
+        "identifier": "AEC_Errors/ERR_Contactor_Plus",
+        "title": "ERR_Contactor_Plus",
+        "unit": "Binary",
+        "description": "Error state of Error Contactor Plus"
+    },
+    "E_CM":
+    {
+        "identifier": "AEC_Errors/ERR_Contactor_Minus",
+        "title": "ERR_Contactor_Minus",
+        "unit": "Binary",
+        "description": "Error state of Error Contactor Minus"
+    },
+    "E_CPC":
+    {
+        "identifier": "AEC_Errors/ERR_Contactor_Pre_Charge",
+        "title": "ERR_Contactor_Pre_Charge",
+        "unit": "Binary",
+        "description": "Error state of Error Contactor Pre Charge"
+    },
+    "E_CD":
+    {
+        "identifier": "AEC_Errors/ERR_CELL_DELTA",
+        "title": "ERR_CELL_DELTA",
+        "unit": "Binary",
+        "description": "Error state of Error Cell Delta"
+    },
+    "E_S":
+    {
+        "identifier": "AEC_Errors/ERR_Service",
+        "title": "ERR_Service",
+        "unit": "Binary",
+        "description": "Error state of Error Service"
+    },
+    "W_NE":
+    {
+        "identifier": "AEC_Warnings/ERR_NO_ERROR",
+        "title": "ERR_NO_ERROR",
+        "unit": "Binary",
+        "description": "Warning state of Error No Error"
+    },
+    "W_ST":
+    {
+        "identifier": "AEC_Warnings/ERR_SELFTEST",
+        "title": "ERR_SELFTEST",
+        "unit": "Binary",
+        "description": "Warning state of Error Selftest"
+    },
+    "W_OC":
+    {
+        "identifier": "AEC_Warnings/ERR_OVER_CURRENT",
+        "title": "ERR_OVER_CURRENT",
+        "unit": "Binary",
+        "description": "Warning state of Error Over Current"
+    },
+    "W_OV":
+    {
+        "identifier": "AEC_Warnings/ERR_OVER_VOLTAGE",
+        "title": "ERR_OVER_VOLTAGE",
+        "unit": "Binary",
+        "description": "Warning state of Error Over Voltage"
+    },
+    "W_UV":
+    {
+        "identifier": "AEC_Warnings/ERR_UNDER_VOLTAGE",
+        "title": "ERR_UNDER_VOLTAGE",
+        "unit": "Binary",
+        "description": "Warning state of Error Under Voltage"
+    },
+    "W_D":
+    {
+        "identifier": "AEC_Warnings/ERR_DIGOVLD",
+        "title": "ERR_DIGOVLD",
+        "unit": "Binary",
+        "description": "Warning state of Error DIGOVLD"
+    },
+    "W_OUT":
+    {
+        "identifier": "AEC_Warnings/ERR_OVER_UNDER_TEMPERATURE",
+        "title": "ERR_OVER_UNDER_TEMPERATURE",
+        "unit": "Binary",
+        "description": "Warning state of Error over/under temperature"
+    },
+    "W_P":
+    {
+        "identifier": "AEC_Warnings/ERR_PARAMINIT",
+        "title": "ERR_PARAMINIT",
+        "unit": "Binary",
+        "description": "Warning state of Error PARAMINIT"
+    },
+    "W_C":
+    {
+        "identifier": "AEC_Warnings/ERR_COMMUNICATION",
+        "title": "ERR_COMMUNICATION",
+        "unit": "Binary",
+        "description": "Warning state of Error Communication"
+    },
+    "E_NID":
+    {
+        "identifier": "Error from Node ID",
+        "title": "Error from Node ID",
+        "unit": "Integer",
+        "description": "Error from Node ID"
+    },
+    "BV":
+    {
+        "identifier": "AEC Voltage",
+        "title": "AEC Voltage",
+        "unit": "Volt(Integer)",
+        "description": "AEC Voltage"
+    },
+    "BC":
+    {
+        "identifier": "AEC Current",
+        "title": "AEC Current",
+        "unit": "Amp(Integer)",
+        "description": "AEC Current"
+    },
+    "B_MSCV":
+    {
+        "identifier": "AEC System Maximum String Cell Voltage",
+        "title": "AEC System Maximum String Cell Voltage",
+        "unit": "Volt(float)",
+        "description": "AEC System Maximum String Cell Voltage"
+    },
+    "B_mSCV":
+    {
+        "identifier": "AEC System Minimum String Cell Voltage",
+        "title": "AEC System Minimum String Cell Voltage",
+        "unit": "Volt(float)",
+        "description": "AEC System Minimum String Cell Voltage"
+    },
+    "B_HS":
+    {
+        "identifier": "AEC System Heater Status",
+        "title": "AEC System Heater Status",
+        "unit": "Integer",
+        "description": "AEC System Heater Status"
+    },
+    "SoH":
+    {
+        "identifier": "AEC SoH",
+        "title": "AEC SoH",
+        "unit": "%(Integer)",
+        "description": "AEC SoH"
+    },
+    "B_HMT":
+    {
+        "identifier": "AEC Hottest Module Temperature",
+        "title": "AEC Hottest Module Temperature",
+        "unit": "°C(Integer)",
+        "description": "AEC Hottest Module Temperature"
+    },
+    "B_CMT":
+    {
+        "identifier": "AEC Coldest Module Temperature",
+        "title": "AEC Coldest Module Temperature",
+        "unit": "°C(Integer)",
+        "description": "AEC Coldest Module Temperature"
+    },
+    "SWV":
+    {
+        "identifier": "AEC SW Version",
+        "title": "AEC SW Version",
+        "unit": "Version(Integer)",
+        "description": "AEC SW Version"
+    },
+    "B_RS":
+    {
+        "identifier": "AEC Relays Status",
+        "title": "AEC Relays Status",
+        "unit": "Binary",
+        "description": "AEC Relays Status"
+    },
+    "B_RC":
+    {
+        "identifier": "AEC Remaining Capacity",
+        "title": "AEC Remaining Capacity",
+        "unit": "Ah(Integer)",
+        "description": "AEC Remaining Capacity"
+    },
+    "B_TR":
+    {
+        "identifier": "AEC Time Remaining",
+        "title": "AEC Time Remaining",
+        "unit": "mins(Integer)",
+        "description": "AEC Time Remaining"
+    },
+    "B_LC":
+    {
+        "identifier": "AEC Lifetime Charged kWh",
+        "title": "AEC Lifetime Charged kWh",
+        "unit": "kWh(Integer)",
+        "description": "AEC Lifetime Charged kWh"
+    },
+    "B_IM":
+    {
+        "identifier": "AEC ISO Monitor",
+        "title": "AEC ISO Monitor",
+        "unit": "kOhm(Integer)",
+        "description": "AEC ISO Monitor"
+    },
+    "B_PCC":
+    {
+        "identifier": "AEC Permitted Charge Current",
+        "title": "AEC Permitted Charge Current",
+        "unit": "Amp(Integer)",
+        "description": "AEC Permitted Charge Current"
+    },
+    "B_PDC":
+    {
+        "identifier": "AEC Permitted Discharge Current",
+        "title": "AEC Permitted Discharge Current",
+        "unit": "Amp(Integer)",
+        "description": "AEC Permitted Discharge Current"
+    },
+    "B_AC":
+    {
+        "identifier": "AEC Alive Counter",
+        "title": "AEC Alive Counter",
+        "unit": "(Integer)",
+        "description": "AEC Alive Counter"
+    }
+}
