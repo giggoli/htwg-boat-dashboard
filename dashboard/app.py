@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 
 import plotly.io as pio
-import my_themes
+import htwg_plotly_theme
 pio.templates.default = "htwg_color_style"
 my_bootstrap = ("/assets/mybootstrap_htwg_theme.css")
 

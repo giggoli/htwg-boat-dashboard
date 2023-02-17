@@ -12,7 +12,9 @@ fig = go.Figure(go.Indicator(
     mode = "gauge+number",
     value = 270,
     domain = {'x': [0, 1], 'y': [0, 1]},
-    title = {'text': "Speed"}))
+    title = {'text': "Speed"},
+    gauge = {  'bar': {'color': "darkblue"}} 
+    ))
 
 bar = go.Figure(
     go.Pie(values=[10,10,10,10,10,10])
