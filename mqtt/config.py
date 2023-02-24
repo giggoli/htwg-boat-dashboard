@@ -17,6 +17,10 @@ def __check_config_dir(config_dir):
         raise ConfigError('config does not contain key "broker_port"')
     if type(config_dir["broker_port"]) is not int:
         raise ConfigError('entry "broker_port" of config is not int')
+    if "client_name" not in config_dir:
+        raise ConfigError('config does not contain key "client_name"')
+    if type(config_dir["client_name"]) is not str:
+        raise ConfigError('entry "client_name" of config is not str')
     if "topics" not in config_dir:
         raise ConfigError('config does not contain key "topics"')
     if type(config_dir["topics"]) is not list:
