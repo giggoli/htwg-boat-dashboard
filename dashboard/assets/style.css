@@ -2,3 +2,8 @@
     text-align: center;
     font-size: xx-large;
 }
+
+.top-buffer { 
+    margin-top: 5px; 
+    margin-left: 5px;
+}

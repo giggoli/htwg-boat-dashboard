@@ -36,8 +36,7 @@ app.layout = dbc.Container(
             [
                 dbc.Col(
                     [
-                        html.Div(children="Mulitpage Example", className="myHeader"),
-                        html.H1(children="test")
+                        html.Div(children="Solenia Dashboard", className="myHeader")
                     ]
                 )
             ]
