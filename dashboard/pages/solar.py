@@ -14,7 +14,7 @@ layout = html.Div(
                 dbc.Col([
                     html.H3(children="Solar")
                 ],xs=12, sm=12, md=12, lg=12, xl=12, xxl=12)
-            ], className="row-buffer"
+            ], className="row-title"
         ),
         dbc.Row(
             [
@@ -71,7 +71,7 @@ layout = html.Div(
                 dbc.Col([
                     html.H3(children="System")
                 ],xs=12, sm=12, md=12, lg=12, xl=12, xxl=12)
-            ], className="row-buffer"
+            ], className="row-title"
         ),
         dbc.Row(
             [
