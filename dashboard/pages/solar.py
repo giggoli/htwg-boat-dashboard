@@ -2,291 +2,111 @@ import dash
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
+import pages.components.solar_cards as solar_cards
+import pages.components.solar_sys_cards as solar_sys_cards
 
 dash.register_page(__name__, order=1)
-
-solar_BV = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Battery voltage"),
-                html.Div(id="solar_BV", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_BC = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Battery current"),
-                html.Div(id="solar_BC", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_BT = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Battery temperature"),
-                html.Div(id="solar_BT", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_CH = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Charger on/off"),
-                html.Div(id="solar_CH", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_CHM = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Charger mode"),
-                html.Div(id="solar_CHM", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_PVV = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="PV voltage"),
-                html.Div(id="solar_PVV", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_PVC = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="PV current"),
-                html.Div(id="solar_PVC", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_EQP = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Equalization pending"),
-                html.Div(id="solar_EQP", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_EQTR = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Equalization time remaining"),
-                html.Div(id="solar_EQTR", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_ROCH = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Relay on charger"),
-                html.Div(id="solar_ROCH", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_SYSALRM = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="System alarm"),
-                html.Div(id="solar_SYSALRM", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_SYSAL = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Low voltage alarm"),
-                html.Div(id="solar_SYSAL", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_SYSAH = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="High volatge alarm"),
-                html.Div(id="solar_ESYSAH", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_YTD = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Yield today"),
-                html.Div(id="solar_YTD", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_MPTD = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Maximum charge power today"),
-                html.Div(id="solar_MPTD", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_YYD = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Yield yesterday"),
-                html.Div(id="solar_YYD", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_MPYD = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Maximum charge power yesterday"),
-                html.Div(id="solar_MPYD", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_ERROR = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Error code"),
-                html.Div(id="solar_ERROR", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_YPVP = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Yield PV power"),
-                html.Div(id="solar_YPVP", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_UYPWR = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="Yield user power"),
-                html.Div(id="solar_UYPWR", children="no Value received")
-            ]
-        ),
-    ],
-)
-
-solar_MPPT = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4(children="MPP operation mode"),
-                html.Div(id="solar_MPPT", children="no Value received")
-            ]
-        ),
-    ],
-)
-
 
 layout = html.Div(
     children=[
         dbc.Row(
             [
-                dbc.Col([solar_BV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_BC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_BT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([
+                    html.H3(children="Solar")
+                ],xs=12, sm=12, md=12, lg=12, xl=12, xxl=12)
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_CH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_CHM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_PVV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_BV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_BC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_BT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_PVC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_EQP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_EQTR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_CH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_CHM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_PVV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_ROCH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_SYSALRM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_SYSAL],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_PVC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_EQP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_EQTR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_SYSAH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_YTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_MPTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_ROCH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_SYSALRM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_SYSAL],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_YYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_MPYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_ERROR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_SYSAH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_YTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_MPTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
         dbc.Row(
             [
-                dbc.Col([solar_YPVP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_UYPWR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_MPPT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="top-buffer"
+                dbc.Col([solar_cards.solar_YYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_MPYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_ERROR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_cards.solar_YPVP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_UYPWR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_cards.solar_MPPT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        #### System ####
+        dbc.Row(
+            [
+                dbc.Col([
+                    html.H3(children="System")
+                ],xs=12, sm=12, md=12, lg=12, xl=12, xxl=12)
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_sys_cards.system_SolSerial],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_AIS],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYSBV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_sys_cards.system_SYSBC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYSBP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYSSOC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_sys_cards.system_SYSSTATE],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYSCAH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYST2G],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_sys_cards.system_PVCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_PVCC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_SYSCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([solar_sys_cards.system_SYSPWR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_BUSCC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([solar_sys_cards.system_BUSCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
         ),
     ],
 )

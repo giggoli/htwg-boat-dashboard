@@ -3,7 +3,11 @@
     font-size: xx-large;
 }
 
-.top-buffer { 
-    margin-top: 5px; 
-    margin-left: 5px;
+.row-buffer { 
+    margin: 5px;
+}
+
+.row-buffer {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
