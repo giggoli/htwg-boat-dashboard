@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 import pages.components.battery_cards as battery_cards
 
-dash.register_page(__name__, order=0)
+dash.register_page(__name__, order=1)
 
 layout = html.Div(
     children=[

@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 import pages.components.fuellevel_cards as fuellevel_cards
 
-dash.register_page(__name__, order=2)
+dash.register_page(__name__, order=3)
 
 layout = html.Div(
     children=[

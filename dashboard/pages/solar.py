@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import pages.components.solar_cards as solar_cards
 import pages.components.solar_sys_cards as solar_sys_cards
 
-dash.register_page(__name__, order=4)
+dash.register_page(__name__, order=5)
 
 layout = html.Div(
     children=[

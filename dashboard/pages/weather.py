@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 import pages.components.weather_cards as weather_cards
 
-dash.register_page(__name__,order=5)
+dash.register_page(__name__,order=6)
 
 layout = html.Div(
     children=[

@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 import pages.components.gps_cards as gps_cards
 
-dash.register_page(__name__, name='GPS',order=3)
+dash.register_page(__name__, name='GPS',order=4)
 
 layout = html.Div(
     children=[
