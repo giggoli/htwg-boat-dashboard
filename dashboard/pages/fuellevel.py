@@ -2,7 +2,9 @@ import dash
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-dash.register_page(__name__, order=0)
+import pages.components.fuellevel_cards as fuellevel_cards
+
+dash.register_page(__name__, order=2)
 
 layout = html.Div(
     children=[
@@ -15,9 +17,15 @@ layout = html.Div(
         ),
         dbc.Row(
             [
-                dbc.Col([],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([fuellevel_cards.fuellevel_ID],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([fuellevel_cards.fuellevel_FL],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([fuellevel_cards.fuellevel_FA],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+            ], className="row-buffer"
+        ),
+        dbc.Row(
+            [
+                dbc.Col([fuellevel_cards.fuellevel_TEMP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([fuellevel_cards.fuellevel_ERROR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
             ], className="row-buffer"
         ),
     ],
