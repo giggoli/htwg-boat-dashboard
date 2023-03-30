@@ -1,4 +1,4 @@
-# htwg-solenia-dashboard
+# htwg-boat-dashboard
 :warning: Work in progress
 
 ## Overview
