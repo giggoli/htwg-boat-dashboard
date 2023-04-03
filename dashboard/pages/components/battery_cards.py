@@ -27,7 +27,7 @@ battery_BHVW = dbc.Card(
     [
         dbc.CardBody(
             [
-                html.H4(children="High violtage warning"),
+                html.H4(children="High voltage warning"),
                 html.Div(id="battery_BHVW", children="no Value received")
             ]
         ),
@@ -38,7 +38,7 @@ battery_BORC = dbc.Card(
     [
         dbc.CardBody(
             [
-                html.H4(children="Open realy crash"),
+                html.H4(children="Open relay crash"),
                 html.Div(id="battery_BORC", children="no Value received")
             ]
         ),
@@ -368,7 +368,7 @@ battery_B_MSCV = dbc.Card(
     [
         dbc.CardBody(
             [
-                html.H4(children="AEC system maximunm string cell voltage"),
+                html.H4(children="AEC system maximum string cell voltage"),
                 html.Div(id="battery_B_MSCV", children="no Value received")
             ]
         ),
@@ -412,7 +412,7 @@ battery_B_HMT = dbc.Card(
     [
         dbc.CardBody(
             [
-                html.H4(children="AEC hottes module temperature"),
+                html.H4(children="AEC hottest module temperature"),
                 html.Div(id="battery_B_HMT", children="no Value received")
             ]
         ),
@@ -445,7 +445,7 @@ battery_B_RS = dbc.Card(
     [
         dbc.CardBody(
             [
-                html.H4(children="AEC realy status"),
+                html.H4(children="AEC relay status"),
                 html.Div(id="battery_B_RS", children="no Value received")
             ]
         ),
