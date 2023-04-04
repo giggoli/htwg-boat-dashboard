@@ -237,7 +237,7 @@ battery_W_NE = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Warning no error"),
-                html.Div(id="battery_W_NW", children="no Value received")
+                html.Div(id="battery_W_NE", children="no Value received"),
             ]
         ),
     ],
