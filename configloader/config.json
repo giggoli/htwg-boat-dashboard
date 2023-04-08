@@ -1,0 +1,10 @@
+{
+    "broker_ip": "192.168.178.50",
+    "broker_port": 1883,
+    "client_name": "dashboard",
+    "topics":[
+        "test/first",
+        "test/second",
+        "battery"
+    ]
+}
