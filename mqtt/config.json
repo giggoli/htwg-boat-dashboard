@@ -1,9 +1,0 @@
-{
-    "broker_ip": "your ip",
-    "broker_port": 1883,
-    "client_name": "dashboard",
-    "topics":[
-        "test/first",
-        "test/second"
-    ]
-}

@@ -1,21 +1,22 @@
 from websocket import create_connection
 from paho.mqtt import client as mqtt_client
-import config
-import os
+import sys, os
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import configloader.config as cnf
 
 def connect_mqtt(user, broker, port):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
-            print("Connected to broker")
+            print("Connected to MQTT broker")
         else:
             print("Failed to connect, CODE %d", rc)
     
     def on_message(client, userdata, msg):
-        print(f'received {msg.payload.decode()} from {msg.topic}')
-        # currently send whole payload to websocket
-        ws_adress = f'ws://127.0.0.1:9001/{msg.topic}'
-        ws = create_connection("ws://127.0.0.1:9001")
+        print(f'Received: {msg.payload.decode()} from: {msg.topic}')
+        ws_adress = f'ws://127.0.0.1:8123/{msg.topic}'
+        ws = create_connection(ws_adress)
         ws.send(msg.payload.decode())
         ws.close()
 
@@ -33,13 +34,12 @@ def subscribe(client, topic):
 
 
 if __name__ == "__main__":
-    cnf_path = os.path.join(os.path.dirname(__file__), 'config.json')
-    cnf = config.getConfig(cnf_path)
+    conf = cnf.getConfig()
 
-    broker = cnf["broker_ip"]
-    port = cnf["broker_port"]
-    client_name = cnf["client_name"]
-    topics = cnf["topics"]
+    broker = conf["broker_ip"]
+    port = conf["broker_port"]
+    client_name = conf["client_name"]
+    topics = conf["topics"]
 
     client = connect_mqtt(client_name, broker, port)
 
