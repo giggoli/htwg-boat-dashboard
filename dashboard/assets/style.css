@@ -7,7 +7,12 @@
     margin: 5px;
 }
 
-.row-buffer {
+.row-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card {
     margin-top: 15px;
     margin-bottom: 15px;
 }
