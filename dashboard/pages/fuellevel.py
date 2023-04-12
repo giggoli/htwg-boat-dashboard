@@ -12,7 +12,7 @@ dash.register_page(__name__, order=3)
 
 layout = html.Div(
     children=[
-        dcc.Store(id='store_session', storage_type='session', data=dict()),
+        dcc.Store(id='store_fuellevel', storage_type='session', data=dict()),
         WebSocket(id="fuellevel_ws", url='ws://127.0.0.1:8123/fuellevel'),
         dbc.Row(
             [
@@ -51,7 +51,7 @@ layout = html.Div(
         Output("fuellevel_FA", "children", allow_duplicate=True),
         Output("fuellevel_TEMP", "children", allow_duplicate=True),
         Output("fuellevel_ERROR", "children", allow_duplicate=True),
-        Output("store_session", 'data')
+        Output("store_fuellevel", 'data')
     ],
     inputs = [
         Input("fuellevel_ws", "message"),
@@ -62,7 +62,7 @@ layout = html.Div(
         State("fuellevel_FA", "children"),
         State("fuellevel_TEMP", "children"),
         State("fuellevel_ERROR", "children"),
-        State("store_session", 'data')
+        State("store_fuellevel", 'data')
     ],
     prevent_initial_call=True
 )
@@ -98,8 +98,8 @@ def update_fuellevel(msg, ID, FL, FA, TEMP, ERROR, storage):
         Output("fuellevel_TEMP", "children"),
         Output("fuellevel_ERROR", "children"),
     ],
-    inputs = [Input("store_session", 'modified_timestamp'),],
-    state = [State("store_session", 'data')],
+    inputs = [Input("store_fuellevel", 'modified_timestamp'),],
+    state = [State("store_fuellevel", 'data')],
 )
 def on_data(ts, data):
         if ts is None:
