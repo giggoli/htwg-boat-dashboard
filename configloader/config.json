@@ -3,9 +3,13 @@
     "broker_port": 1883,
     "client_name": "dashboard",
     "topics":[
-        "test/first",
-        "test/second",
-        "battery"
+        "batcoap",
+        "fuelcell",
+        "fuellevel",
+        "gps",
+        "solar",
+        "weather"
+
     ],
     "ws_port": 8123
 }
