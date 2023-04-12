@@ -34,12 +34,7 @@ def subscribe(client, topic):
 
 
 if __name__ == "__main__":
-    conf = cnf.getConfig()
-
-    broker = conf["broker_ip"]
-    port = conf["broker_port"]
-    client_name = conf["client_name"]
-    topics = conf["topics"]
+    broker, port, client_name, topics = cnf.getMqttConfig()
 
     client = connect_mqtt(client_name, broker, port)
 
