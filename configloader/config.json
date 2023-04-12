@@ -6,5 +6,6 @@
         "test/first",
         "test/second",
         "battery"
-    ]
+    ],
+    "ws_port": 8123
 }

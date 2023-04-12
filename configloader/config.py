@@ -9,7 +9,7 @@ def __load_config(path):
         config_dir = json.loads(file.read())
     return config_dir
 
-def __check_config_dir(config_dir):
+def __validate_config_dir(config_dir):
     if "broker_ip" not in config_dir:
         raise ConfigError('config does not contain key "broker_ip"')
     if type(config_dir["broker_ip"]) is not str:
@@ -26,12 +26,31 @@ def __check_config_dir(config_dir):
         raise ConfigError('config does not contain key "topics"')
     if type(config_dir["topics"]) is not list:
         raise ConfigError('entry "broker_port" of config is not list')
+    if "ws_port" not in config_dir:
+        raise ConfigError('config does not contain key "ws_port"')
+    if type(config_dir["ws_port"]) is not int:
+        raise ConfigError('entry "ws_port" of config is not int')
     
 
-def getConfig():
+def __checkConfig():
     cnf_path = os.path.join(os.path.dirname(__file__), 'config.json')
     config = __load_config(cnf_path)
-    __check_config_dir(config)
+    __validate_config_dir(config)
     return config
 
+
+def getMqttConfig():
+    conf = __checkConfig()
+    broker = conf["broker_ip"]
+    port = conf["broker_port"]
+    client_name = conf["client_name"]
+    topics = conf["topics"]
+    return broker, port, client_name, topics
+
     
+def getWsConfig():
+    conf = __checkConfig()
+    port = conf["ws_port"]
+    topics = conf["topics"]
+    return port, topics
+
