@@ -66,27 +66,27 @@ layout = html.Div(
     ],
     prevent_initial_call=True
 )
-def update_fuellevel(msg, ID, FL, FA, TEMP, ERROR, storage):
+def update_fuellevel(msg, id, fl, fa, temp, error, storage):
     is_json, message = validate_message(msg["data"])
     if is_json:
-        ID = set_fuellevel_ID(message["ID"])
-        FL = set_fuellevel_FL(message["FL"])
-        FA = set_fuellevel_FA(message["FA"])
-        TEMP = set_fuellevel_TEMP(message["TEMP"])
-        ERROR = set_fuellevel_ERROR(message["ERROR"])
+        id = set_fuellevel_ID(message["ID"])
+        fl = set_fuellevel_FL(message["FL"])
+        fa = set_fuellevel_FA(message["FA"])
+        temp = set_fuellevel_TEMP(message["TEMP"])
+        error = set_fuellevel_ERROR(message["ERROR"])
 
-        storage["ID"] = ID
-        storage["FL"] = FL
-        storage["FA"] = FA
-        storage["TEMP"] = TEMP
-        storage["ERROR"] = ERROR
+        storage["ID"] = id
+        storage["FL"] = fl
+        storage["FA"] = fa
+        storage["TEMP"] = temp
+        storage["ERROR"] = error
 
         return [
-            ID, FL, FA, TEMP, ERROR, storage
+            id, fl, fa, temp, error, storage
         ]
     else:
         return [
-            ID, FL, FA, TEMP, ERROR, storage
+            id, fl, fa, temp, error, storage
         ]
 
 
@@ -98,10 +98,10 @@ def update_fuellevel(msg, ID, FL, FA, TEMP, ERROR, storage):
         Output("fuellevel_TEMP", "children"),
         Output("fuellevel_ERROR", "children"),
     ],
-    inputs = [Input("store_fuellevel", 'modified_timestamp'),],
+    inputs = [Input("store_fuellevel", 'modified_timestamp')],
     state = [State("store_fuellevel", 'data')],
 )
-def on_data(ts, data):
+def get_fuellevel_storage(ts, data):
         if ts is None:
             raise PreventUpdate
 
