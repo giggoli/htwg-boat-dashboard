@@ -101,3 +101,13 @@ gps_VARIAT_EW = dbc.Card(
         ),
     ],
 )
+
+gps_MAP = dbc.Card(
+    [
+        dbc.CardBody(
+            [
+                html.Div(id="gps_MAP", children="no Value to show on Map")
+            ]
+        ),
+    ],
+)
