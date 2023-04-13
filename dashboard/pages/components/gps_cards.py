@@ -19,7 +19,7 @@ gps_VALID = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Validity"),
-                html.Div(id="gps_VAILD", children="no Value received")
+                html.Div(id="gps_VALID", children="no Value received")
             ]
         ),
     ],
