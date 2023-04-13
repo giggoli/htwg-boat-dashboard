@@ -25,21 +25,44 @@ layout = html.Div(
             [
                 dbc.Col(
                     [
-                        gps_cards.gps_HEAD,
-                        gps_cards.gps_LAT,
-                        gps_cards.gps_LONG
-                    ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col(
-                    [
+                        gps_cards.gps_MAP,
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        gps_cards.gps_LAT,
+                                    ],xs=6, sm=6, md=6, lg=6, xl=6, xxl=6),
+                                dbc.Col(
+                                    [
+                                        gps_cards.gps_LONG,
+                                    ],xs=6, sm=6, md=6, lg=6, xl=6, xxl=6),
+                            ]
+                        ),
                         gps_cards.gps_VALID,
-                        gps_cards.gps_NS,
-                        gps_cards.gps_EW
                     ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+
                 dbc.Col(
                     [
-                        gps_cards.gps_SPEED,
+                        gps_cards.gps_HEAD,
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        gps_cards.gps_NS,
+                                    ],xs=6, sm=6, md=6, lg=6, xl=6, xxl=6),
+                                dbc.Col(
+                                    [
+                                        gps_cards.gps_EW, 
+                                    ],xs=6, sm=6, md=6, lg=6, xl=6, xxl=6),
+                            ]
+                        ),
+                        gps_cards.gps_VARIAT_EW,
+                    ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+
+                dbc.Col(
+                    [
                         gps_cards.gps_VARIAT,
-                        gps_cards.gps_VARIAT_EW
+                        gps_cards.gps_SPEED,
                     ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
             ], className="row-buffer"
         ),
@@ -56,7 +79,8 @@ layout = html.Div(
         Output("gps_EW", "children", allow_duplicate=True),
         Output("gps_SPEED", "children", allow_duplicate=True),
         Output("gps_VARIAT", "children", allow_duplicate=True),
-        Output("gps_VARIAT_EW", "children", allow_duplicate=True),      
+        Output("gps_VARIAT_EW", "children", allow_duplicate=True),
+        Output("gps_MAP", "children", allow_duplicate=True),       
         Output("store_gps", 'data')
     ],
     inputs = [
@@ -72,11 +96,12 @@ layout = html.Div(
         State("gps_SPEED", "children"),
         State("gps_VARIAT", "children"),
         State("gps_VARIAT_EW", "children"), 
+        State("gps_MAP", "children"), 
         State("store_gps", 'data')
     ],
     prevent_initial_call=True
 )
-def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, storage):
+def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, map, storage):
     is_json, message = validate_message(msg["data"])
     if is_json:
         head = set_gps_head(message["head"])
@@ -88,6 +113,7 @@ def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, 
         speed = set_gps_speed(message["speed"] )
         variant = set_gps_variant(message["variat"])
         variant_ew = set_gps_variant_ew(message["variat_ew"])
+        map = set_gps_map(message["lat"], message["long"])
 
         storage["gps_HEAD"] = head
         storage["gps_VALID"] = valid
@@ -98,13 +124,14 @@ def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, 
         storage["gps_SPEED"] = speed 
         storage["gps_VARIAT"] = variant
         storage["gps_VARIAT_EW"] = variant_ew
+        storage["gps_MAP"] = map
 
         return [
-            head, valid, lat, ns, long, ew, speed, variant, variant_ew, storage
+            head, valid, lat, ns, long, ew, speed, variant, variant_ew, map, storage
         ]
     else:
         return [
-            head, valid, lat, ns, long, ew, speed, variant, variant_ew, storage
+            head, valid, lat, ns, long, ew, speed, variant, variant_ew, map, storage
         ]
 
 @callback(
@@ -118,6 +145,7 @@ def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, 
         Output("gps_SPEED", "children"),
         Output("gps_VARIAT", "children"),
         Output("gps_VARIAT_EW", "children"),
+        Output("gps_MAP", "children"),
     ],
     inputs = [Input("store_gps", "modified_timestamp")],
     state = [State("store_gps", 'data')],
@@ -135,7 +163,8 @@ def get_gps_storage(ts, data):
         data.get("gps_EW", "no Value received"),
         data.get("gps_SPEED", "no Value received"),
         data.get("gps_VARIAT", "no Value received"),
-        data.get("gps_VARIAT_EW", "no Value received")
+        data.get("gps_VARIAT_EW", "no Value received"),
+        data.get("gps_MAP", "no Value to show on Map")
     ]
 
 def validate_message(msg):
@@ -148,11 +177,33 @@ def validate_message(msg):
         return [True, message]
     
 def set_gps_head(value):
-    return f"{value}"
+    fig = go.Figure(
+        go.Barpolar(
+            hoverinfo="skip",
+            r=[1],
+            theta=[value],
+            width=[6],
+            marker_line_color = "black",
+            marker_line_width = 1
+        ),
+    )
+    fig.update_layout(
+        title = dict(text=f"{value}°",font_size=25),
+        polar = dict(
+            radialaxis = dict(range=[0,1], showticklabels=False, ticks=''),
+            angularaxis = dict(direction="clockwise", rotation=90),
+        )
+    )
+    return dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": 400})
 
 def set_gps_valid(value):
-    return f"{value}"
-
+    if value == "A":
+        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+    elif value == "V":
+        return dbc.Alert("INVALID", color="danger", style={"text-align": "center"})
+    else:
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+    
 def set_gps_lat(value):
     return f"{value}"
 
@@ -166,10 +217,72 @@ def set_gps_ew(value):
     return f"{value}"
 
 def set_gps_speed(value):
-    return f"{value}"
+    fig = go.Figure(
+        go.Indicator(
+            mode = "gauge+number",
+            value = value,
+            title = {"text": "knots"}
+        )
+    )
+    fig.update_traces(
+        gauge_axis=dict(range=[0,15])
+    )
+    fig.update_layout(
+        margin=dict(l=50,r=50,b=50,t=50)
+    )
+    return dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": 230})
 
 def set_gps_variant(value):
-    return f"{value}"
+    fig = go.Figure(
+        go.Barpolar(
+            hoverinfo="skip",
+            r=[1],
+            theta=[value],
+            width=[6],
+            marker_line_color = "black",
+            marker_line_width = 1
+        ),
+    )
+    fig.update_layout(
+        title = dict(text=f"{value}°",font_size=25),
+        polar = dict(
+            radialaxis = dict(range=[0,1], showticklabels=False, ticks=''),
+            angularaxis = dict(direction="clockwise", rotation=90),
+        )
+    )
+    return dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": 400})
 
 def set_gps_variant_ew(value):
     return f"{value}"
+
+def set_gps_map(lat, lon):
+    mapbox_token = "pk.eyJ1IjoiZ2lnZ29saSIsImEiOiJjbGdmZ3lkMjcwMWtjM2NueXYxdXphejI0In0.PrI0W5urGtSM4hnVdSbtcQ"
+
+    latitude = f"{lat}"
+    longitude = f"{lon}"
+
+    fig = go.Figure(
+        go.Scattermapbox(
+            lat=[latitude],
+            lon=[longitude],
+            mode="markers",
+            marker=go.scattermapbox.Marker(
+                size=14
+            ),
+        )
+    )
+    fig.update_layout(
+        mapbox = dict(
+            accesstoken = mapbox_token,
+            bearing = 0,
+            center = go.layout.mapbox.Center(
+                lat = lat,
+                lon = lon
+            ),
+            pitch = 0,
+            zoom = 13
+        ),
+        margin=dict(l=5,r=5,b=5,t=5)
+
+    )
+    return dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": 430})
