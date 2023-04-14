@@ -17,7 +17,7 @@ fuelcell_status_e_s = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Error Status (Status)"),
-                html.Div(id="fuelcell_status_e_i", children="no Value received")
+                html.Div(id="fuelcell_status_e_s", children="no Value received")
             ]
         ),
     ],
@@ -39,7 +39,7 @@ fuelcell_SOC_e_s = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Error Status (SOC)"),
-                html.Div(id="fuelcell_SOC_e_i", children="no Value received")
+                html.Div(id="fuelcell_SOC_e_s", children="no Value received")
             ]
         ),
     ],
@@ -61,7 +61,7 @@ fuelcell_SOV_e_s = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Error Status (SOV)"),
-                html.Div(id="fuelcell_SOV_e_i", children="no Value received")
+                html.Div(id="fuelcell_SOV_e_s", children="no Value received")
             ]
         ),
     ],
@@ -83,7 +83,7 @@ fuelcell_SOP_e_s = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Error Status (SOP)"),
-                html.Div(id="fuelcell_SOP_e_i", children="no Value received")
+                html.Div(id="fuelcell_SOP_e_s", children="no Value received")
             ]
         ),
     ],
