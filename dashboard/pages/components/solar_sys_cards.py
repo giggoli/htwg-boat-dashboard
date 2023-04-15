@@ -8,7 +8,7 @@ system_SolSerial = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Serial number of solar generator"),
-                html.Div(id="system_SolSerial ", children="no Value received")
+                html.Div(id="system_SolSerial", children="no Value received")
             ]
         ),
     ],
@@ -19,7 +19,7 @@ system_AIS = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Active input source"),
-                html.Div(id="system_AIS ", children="no Value received")
+                html.Div(id="system_AIS", children="no Value received")
             ]
         ),
     ],
@@ -63,7 +63,7 @@ system_SYSSOC = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="Battery state of charge"),
-                html.Div(id="SYSSOC", children="no Value received")
+                html.Div(id="system_SYSSOC", children="no Value received")
             ]
         ),
     ],

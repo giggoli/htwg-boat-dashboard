@@ -139,7 +139,7 @@ solar_SYSAH = dbc.Card(
         dbc.CardBody(
             [
                 html.H4(children="High volatge alarm"),
-                html.Div(id="solar_ESYSAH", children="no Value received")
+                html.Div(id="solar_SYSAH", children="no Value received")
             ]
         ),
     ],
