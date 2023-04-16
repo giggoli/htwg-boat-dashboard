@@ -41,7 +41,7 @@ if __name__ == "__main__":
             send_msg(file.read(), "weather")
         with open("test/JSON_files/batcoap2.json", "r") as file:
             send_msg(file.read(), "batcoap")
-        with open("test/JSON_files/solar.json", "r") as file:
+        with open("test/JSON_files/solar2.json", "r") as file:
             send_msg(file.read(), "solar")
         
 
