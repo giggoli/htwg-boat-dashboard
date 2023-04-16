@@ -500,7 +500,7 @@ def validate_message(msg):
     
 
 def set_battery_BSR(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -515,7 +515,7 @@ def set_battery_BSR(value):
         return content
 
 def set_battery_BLVW(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -530,7 +530,7 @@ def set_battery_BLVW(value):
         return content
 
 def set_battery_BHVW(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -545,7 +545,7 @@ def set_battery_BHVW(value):
         return content
 
 def set_battery_BORC(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -560,7 +560,7 @@ def set_battery_BORC(value):
         return content
 
 def set_battery_BORE(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -575,10 +575,10 @@ def set_battery_BORE(value):
         return content
 
 def set_battery_SoC(value):
-    return dbc.Progress(label=f"{value} %", value=value, style={"font-size":"1em"})
+    return dbc.Progress(label=f"{value} %", value=value, style={"fontSize":"1em"})
 
 def set_battery_E_NE(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -593,7 +593,7 @@ def set_battery_E_NE(value):
         return content
 
 def set_battery_E_ST(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -608,7 +608,7 @@ def set_battery_E_ST(value):
         return content
 
 def set_battery_E_OC(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -623,7 +623,7 @@ def set_battery_E_OC(value):
         return content
 
 def set_battery_E_OV(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -638,7 +638,7 @@ def set_battery_E_OV(value):
         return content
 
 def set_battery_E_UV(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -653,7 +653,7 @@ def set_battery_E_UV(value):
         return content
 
 def set_battery_E_D(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -668,7 +668,7 @@ def set_battery_E_D(value):
         return content
 
 def set_battery_E_OUT(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -683,7 +683,7 @@ def set_battery_E_OUT(value):
         return content
 
 def set_battery_E_P(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -698,7 +698,7 @@ def set_battery_E_P(value):
         return content
 
 def set_battery_E_C(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -713,7 +713,7 @@ def set_battery_E_C(value):
         return content
 
 def set_battery_E_H(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -728,7 +728,7 @@ def set_battery_E_H(value):
         return content
 
 def set_battery_E_CM(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -743,7 +743,7 @@ def set_battery_E_CM(value):
         return content
 
 def set_battery_E_CPC(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -758,7 +758,7 @@ def set_battery_E_CPC(value):
         return content
 
 def set_battery_E_CD(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -773,7 +773,7 @@ def set_battery_E_CD(value):
         return content
 
 def set_battery_E_S(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -788,7 +788,7 @@ def set_battery_E_S(value):
         return content
 
 def set_battery_W_NE(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -803,7 +803,7 @@ def set_battery_W_NE(value):
         return content
 
 def set_battery_W_ST(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -818,7 +818,7 @@ def set_battery_W_ST(value):
         return content
 
 def set_battery_W_OC(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -833,7 +833,7 @@ def set_battery_W_OC(value):
         return content
 
 def set_battery_W_OV(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -848,7 +848,7 @@ def set_battery_W_OV(value):
         return content
 
 def set_battery_W_UV(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -863,7 +863,7 @@ def set_battery_W_UV(value):
         return content
 
 def set_battery_W_D(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -878,7 +878,7 @@ def set_battery_W_D(value):
         return content
 
 def set_battery_W_OUT(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -893,7 +893,7 @@ def set_battery_W_OUT(value):
         return content
 
 def set_battery_W_P(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -908,7 +908,7 @@ def set_battery_W_P(value):
         return content
 
 def set_battery_W_C(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"
@@ -941,7 +941,7 @@ def set_battery_B_HS(value):
     return f"{value}"
 
 def set_battery_SoH(value):
-    return dbc.Progress(label=f"{value} %", value=value, style={"font-size":"1em"})
+    return dbc.Progress(label=f"{value} %", value=value, style={"fontSize":"1em"})
 
 def set_battery_B_HMT(value):
     return f"{value} °C"
@@ -953,7 +953,7 @@ def set_battery_SWV(value):
     return f"{value}"
 
 def set_battery_B_RS(value):
-    content = dbc.Alert(style={"text-align": "center"})
+    content = dbc.Alert(style={"textAlign": "center"})
     if value == "0":
         content.children = "OK"
         content.color = "success"

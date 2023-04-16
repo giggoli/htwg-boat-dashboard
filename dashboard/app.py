@@ -6,7 +6,7 @@ from dash_bootstrap_templates import load_figure_template
 import plotly.io as pio
 import htwg_plotly_theme
 pio.templates.default = "htwg_color_style"
-my_bootstrap = ("/assets/mybootstrap_htwg_theme.css")
+my_bootstrap = ("/assets/HTWG_theme.css")
 
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[my_bootstrap])

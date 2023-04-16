@@ -198,11 +198,11 @@ def set_gps_head(value):
 
 def set_gps_valid(value):
     if value == "A":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "V":
-        return dbc.Alert("INVALID", color="danger", style={"text-align": "center"})
+        return dbc.Alert("INVALID", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
     
 def set_gps_lat(value):
     return f"{value}"
@@ -256,8 +256,7 @@ def set_gps_variant_ew(value):
     return f"{value}"
 
 def set_gps_map(lat, lon):
-    mapbox_token = "pk.eyJ1IjoiZ2lnZ29saSIsImEiOiJjbGdmZ3lkMjcwMWtjM2NueXYxdXphejI0In0.PrI0W5urGtSM4hnVdSbtcQ"
-
+    mapbox_token = "pk.eyJ1IjoiZ2lnZ29saSIsImEiOiJjbGdmamV0amUwMjhlM2RycmFtZHR1dWJlIn0.Cz8obmTiAbwlTfeaWKTlRw"
     latitude = f"{lat}"
     longitude = f"{lon}"
 
@@ -280,7 +279,7 @@ def set_gps_map(lat, lon):
                 lon = lon
             ),
             pitch = 0,
-            zoom = 13
+            zoom = 15
         ),
         margin=dict(l=5,r=5,b=5,t=5)
 

@@ -25,53 +25,36 @@ layout = html.Div(
         ),
         dbc.Row(
             [
-                dbc.Col([solar_cards.solar_BV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_BC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_BT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_cards.solar_BV,
+                    solar_cards.solar_CH,
+                    solar_cards.solar_PVC,
+                    solar_cards.solar_ROCH,
+                    solar_cards.solar_SYSAH,
+                    solar_cards.solar_YYD,
+                    solar_cards.solar_YPVP,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_cards.solar_BC,
+                    solar_cards.solar_CHM,
+                    solar_cards.solar_EQP,
+                    solar_cards.solar_SYSALRM,
+                    solar_cards.solar_YTD,
+                    solar_cards.solar_MPYD,
+                    solar_cards.solar_UYPWR,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_cards.solar_BT,
+                    solar_cards.solar_PVV,
+                    solar_cards.solar_EQTR,
+                    solar_cards.solar_SYSAL,
+                    solar_cards.solar_MPTD,
+                    solar_cards.solar_ERROR,
+                    solar_cards.solar_MPPT,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
             ], className="row-buffer"
         ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_CH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_CHM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_PVV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_PVC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_EQP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_EQTR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_ROCH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_SYSALRM],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_SYSAL],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_SYSAH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_YTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_MPTD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_YYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_MPYD],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_ERROR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_cards.solar_YPVP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_UYPWR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_cards.solar_MPPT],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
+
         #### System ####
         dbc.Row(
             [
@@ -82,37 +65,27 @@ layout = html.Div(
         ),
         dbc.Row(
             [
-                dbc.Col([solar_sys_cards.system_SolSerial],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_AIS],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYSBV],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_sys_cards.system_SYSBC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYSBP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYSSOC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_sys_cards.system_SYSSTATE],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYSCAH],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYST2G],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_sys_cards.system_PVCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_PVCC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_SYSCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-            ], className="row-buffer"
-        ),
-        dbc.Row(
-            [
-                dbc.Col([solar_sys_cards.system_SYSPWR],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_BUSCC],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
-                dbc.Col([solar_sys_cards.system_BUSCP],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_sys_cards.system_SolSerial,
+                    solar_sys_cards.system_SYSBC,
+                    solar_sys_cards.system_SYSSTATE,
+                    solar_sys_cards.system_PVCP,
+                    solar_sys_cards.system_SYSPWR,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_sys_cards.system_AIS,
+                    solar_sys_cards.system_SYSBP,
+                    solar_sys_cards.system_SYSCAH,
+                    solar_sys_cards.system_PVCC,
+                    solar_sys_cards.system_BUSCC,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
+                dbc.Col([
+                    solar_sys_cards.system_SYSBV,
+                    solar_sys_cards.system_SYSSOC,
+                    solar_sys_cards.system_SYST2G,
+                    solar_sys_cards.system_SYSCP,
+                    solar_sys_cards.system_BUSCP,
+                ],xs=4, sm=4, md=4, lg=4, xl=4, xxl=4),
             ], className="row-buffer"
         ),
     ],
@@ -444,7 +417,7 @@ def set_solar_BT(value):
     
 
 def set_solar_CH(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 1:
         content.children = "ON"
         content.color = "success"
@@ -457,7 +430,7 @@ def set_solar_CH(value):
         return content
 
 def set_solar_CHM(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="info", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="info", style={"textAlign": "center"})
     if value == 0:
         content.children = "OFF"
         content.color = "warning"
@@ -495,7 +468,7 @@ def set_solar_PVC(value):
     return f"{value} A"
 
 def set_solar_EQP(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "NO"
         content.color = "primary"
@@ -519,7 +492,7 @@ def set_solar_EQTR(value):
     return f"{value} seconds"
 
 def set_solar_ROCH(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "Open"
         content.color = "primary"
@@ -532,7 +505,7 @@ def set_solar_ROCH(value):
         return content
 
 def set_solar_SYSALRM(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "No Alarm"
         content.color = "success"
@@ -545,7 +518,7 @@ def set_solar_SYSALRM(value):
         return content
 
 def set_solar_SYSAL(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "No Alarm"
         content.color = "success"
@@ -558,7 +531,7 @@ def set_solar_SYSAL(value):
         return content
 
 def set_solar_SYSAH(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "No Alarm"
         content.color = "success"
@@ -583,7 +556,7 @@ def set_solar_MPYD(value):
     return f"{value} W"
 
 def set_solar_ERROR(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="danger", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="danger", style={"textAlign": "center"})
     if value == 0:
         content.children = "No Error"
         content.color = "success"
@@ -647,7 +620,7 @@ def set_solar_UYPWR(value):
     return f"{value} kWh"
 
 def set_solar_MPPT(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "Of"
         content.color = "danger"
@@ -670,7 +643,7 @@ def set_system_SolSerial(value):
     return f"{value}"
 
 def set_system_AIS(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="warning", style={"textAlign": "center"})
     if value == 0:
         content.children = "Unknown"
         return content
@@ -702,10 +675,10 @@ def set_system_SYSBP(value):
     return f"{value} W"
 
 def set_system_SYSSOC(value):
-    return dbc.Progress(label=f"{value}%", value=value, style={"font-size": "1em"})
+    return dbc.Progress(label=f"{value}%", value=value, style={"fontSize": "1em"})
 
 def set_system_SYSSTATE(value):
-    content = dbc.Alert(f"Value: {value} not defined", color="info", style={"text-align": "center"})
+    content = dbc.Alert(f"Value: {value} not defined", color="info", style={"textAlign": "center"})
     if value == 0:
         content.children = "idle"
         return content

@@ -128,18 +128,18 @@ def set_fuellevel_ID(value):
     return f"{value}"
 
 def set_fuellevel_FL(value):
-    return dbc.Progress(label=f"{value}%", value=value, style={"font-size": "1em"})
+    return dbc.Progress(label=f"{value}%", value=value, style={"fontSize": "1em"})
 
 def set_fuellevel_FA(value):
-    return dbc.Alert(f"{value} ml", color="primary", style={"text-align": "center"})
+    return dbc.Alert(f"{value} ml", color="primary", style={"textAlign": "center"})
 
 def set_fuellevel_TEMP(value):
     return f"{value}"
 
 def set_fuellevel_ERROR(value):
     if value == 0:
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == 1:
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="light", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="light", style={"textAlign": "center"})

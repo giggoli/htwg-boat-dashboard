@@ -181,82 +181,82 @@ def validate_message(msg):
     
 def set_fuelcell_status_e_i(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_status_e_s(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_soc_e_i(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_soc_e_s(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_sov_e_i(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_sov_e_s(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_sop_e_i(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_sop_e_s(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_status(value):
     if value == "0":
-        return dbc.Alert("OK", color="success", style={"text-align": "center"})
+        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
     elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"text-align": "center"})
+        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
     else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"text-align": "center"})
+        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
 
 def set_fuelcell_soc(value):
-    return dbc.Alert(f"{value} A", color="primary", style={"text-align": "center"})
+    return dbc.Alert(f"{value} A", color="primary", style={"textAlign": "center"})
 
 def set_fuelcell_sov(value):
-    return dbc.Alert(f"{value} V", color="primary", style={"text-align": "center"})
+    return dbc.Alert(f"{value} V", color="primary", style={"textAlign": "center"})
 
 def set_fuelcell_sop(value):
-    return dbc.Alert(f"{value} W", color="primary", style={"text-align": "center"})
+    return dbc.Alert(f"{value} W", color="primary", style={"textAlign": "center"})
 

@@ -156,7 +156,7 @@ def validate_message(msg):
     
 
 def set_weather_cur(value):
-    image = html.Img(style={"width": "100%", "height": "100%", "object-fit": "scale-down"})
+    image = html.Img(style={"width": "100%", "height": "100%", "objectFit": "scale-down"})
     match value:
         case "sonnig":
             image.src="/assets/sonnig.png"
@@ -173,7 +173,7 @@ def set_weather_cur(value):
 
     content = html.Div(
         children=[
-            html.Div(children=f"{value}", style={"text-align": "center",  "font-size": "24px"}),
+            html.Div(children=f"{value}", style={"textAlign": "center",  "fontSize": "24px"}),
             html.Div(children=image, style={"height": 100})
         ]
     )
@@ -211,7 +211,7 @@ def set_weather_temp(value):
 
 
 def set_weather_vis(value):
-    return dbc.Progress(label=f"{value} %", value=value, style={"font-size": "1em"})
+    return dbc.Progress(label=f"{value} %", value=value, style={"fontSize": "1em"})
 
 def set_weather_w_spd(value):
     return f"{value} m/s"
