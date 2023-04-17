@@ -51,9 +51,17 @@ async def main(port):
     async with websockets.serve(ws_handler, "localhost", port):
         await asyncio.Future()
 
-if __name__ == "__main__":
+def start_ws():
     port = 8123
     topics = cnf.getWsConfig()
     convert_topic_to_ws_path(topics)
     setup_paths()
     asyncio.run(main(port))
+
+
+# if __name__ == "__main__":
+#     port = 8123
+#     topics = cnf.getWsConfig()
+#     convert_topic_to_ws_path(topics)
+#     setup_paths()
+#     asyncio.run(main(port))
