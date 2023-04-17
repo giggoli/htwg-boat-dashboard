@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 import sys,os,time
 from multiprocessing import Process
-from gevent.pywsgi import WSGIServer
+
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     proc_mqtt.start()
     time.sleep(2)
 
-    dashboard.run_server(debug=False)
+    dashboard.run_server(port=8050, host="0.0.0.0", debug=False)
 
 
 

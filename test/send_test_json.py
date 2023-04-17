@@ -1,7 +1,8 @@
 import paho.mqtt.publish as sender
 import time
 
-host = "192.168.178.30"
+#host = "192.168.178.30"
+host = "127.0.0.1"
 
 
 def send_msg(payload, topic):
@@ -14,7 +15,7 @@ with open("test/JSON_files/fuellevel.json", "r") as file:
     
 
 if __name__ == "__main__":
-    for i in range(10):
+    for i in range(100):
         print(f"Remaining loops {10-i}")
         with open("test/JSON_files/fuellevel.json", "r") as file:
             send_msg(file.read(), "fuellevel")

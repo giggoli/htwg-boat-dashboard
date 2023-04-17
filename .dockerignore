@@ -1,0 +1,18 @@
+#own
+.vscode
+doc
+JSON_files
+test
+.DS_store
+
+
+#common
+README.md
+CHANGELOG.md
+docker-compose.yml
+Dockerfile
+
+# git
+.git
+.gitattributes
+.gitignore

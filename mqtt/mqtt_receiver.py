@@ -15,7 +15,7 @@ def connect_mqtt(user, broker, port):
     
     def on_message(client, userdata, msg):
         print(f'Received: {msg.payload.decode()} from: {msg.topic}')
-        ws_adress = f'ws://127.0.0.1:8123/{msg.topic}'
+        ws_adress = f'ws://0.0.0.0:8123/{msg.topic}'
         ws = create_connection(ws_adress)
         ws.send(msg.payload.decode())
         ws.close()

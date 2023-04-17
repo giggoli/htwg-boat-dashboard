@@ -48,7 +48,7 @@ async def ws_handler(websocket, path):
 
 
 async def main(port):
-    async with websockets.serve(ws_handler, "localhost", port):
+    async with websockets.serve(ws_handler, port=port):
         await asyncio.Future()
 
 def start_ws():
