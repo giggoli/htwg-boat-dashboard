@@ -15,7 +15,7 @@ def connect_mqtt(user, broker, port):
     
     def on_message(client, userdata, msg):
         print(f'Received: {msg.payload.decode()} from: {msg.topic}')
-        ws_adress = f'ws://127.0.0.1:8123/{msg.topic}'
+        ws_adress = f'ws://0.0.0.0:8123/{msg.topic}'
         ws = create_connection(ws_adress)
         ws.send(msg.payload.decode())
         ws.close()
@@ -32,8 +32,7 @@ def subscribe(client, topic):
 
 
 
-
-if __name__ == "__main__":
+def launch_mqtt():
     broker, port, client_name, topics = cnf.getMqttConfig()
 
     client = connect_mqtt(client_name, broker, port)
@@ -43,3 +42,14 @@ if __name__ == "__main__":
         subscribe(client, topic)
 
     client.loop_forever()
+
+# if __name__ == "__main__":
+#     broker, port, client_name, topics = cnf.getMqttConfig()
+
+#     client = connect_mqtt(client_name, broker, port)
+
+#     # run loop_forever to subscribe all time
+#     for topic in topics:
+#         subscribe(client, topic)
+
+#     client.loop_forever()

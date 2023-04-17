@@ -10,6 +10,5 @@
         "solar",
         "weather"
 
-    ],
-    "ws_port": 8123
+    ]
 }
