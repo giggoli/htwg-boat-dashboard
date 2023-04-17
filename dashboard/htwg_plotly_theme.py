@@ -6,12 +6,11 @@ pio.templates["htwg_color_style"] = go.layout.Template(
     layout = {
         "font": {"color": "#008b83"},
         "colorway": [
-            "#00e6d8",
-            "#00ccc0",
-            "#66c2bd",
             "#009a91",
-            "#005c57",
-            "#002e2b"
+            "#00b3a7",
+            "#00ccbe",
+            "#00e6d6",
+            "#00ffff"
         ],
         "font": {'color': '#2a3f5f'},
     }

@@ -5,6 +5,7 @@ from dash_extensions import WebSocket
 import plotly.graph_objects as go
 from dash.exceptions import PreventUpdate
 import json
+import os
 
 import pages.components.gps_cards as gps_cards
 
@@ -221,7 +222,8 @@ def set_gps_speed(value):
         go.Indicator(
             mode = "gauge+number",
             value = value,
-            title = {"text": "knots"}
+            title = {"text": "knots"},
+            gauge={"bar": {"color": "#009a91"}}
         )
     )
     fig.update_traces(
@@ -256,7 +258,7 @@ def set_gps_variant_ew(value):
     return f"{value}"
 
 def set_gps_map(lat, lon):
-    mapbox_token = "pk.eyJ1IjoiZ2lnZ29saSIsImEiOiJjbGdmamV0amUwMjhlM2RycmFtZHR1dWJlIn0.Cz8obmTiAbwlTfeaWKTlRw"
+    mapbox_token = open("dashboard/pages/.mapboxtoken").read()
     latitude = f"{lat}"
     longitude = f"{lon}"
 

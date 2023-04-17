@@ -26,10 +26,6 @@ def __validate_config_dir(config_dir):
         raise ConfigError('config does not contain key "topics"')
     if type(config_dir["topics"]) is not list:
         raise ConfigError('entry "broker_port" of config is not list')
-    if "ws_port" not in config_dir:
-        raise ConfigError('config does not contain key "ws_port"')
-    if type(config_dir["ws_port"]) is not int:
-        raise ConfigError('entry "ws_port" of config is not int')
     
 
 def __checkConfig():
@@ -50,7 +46,6 @@ def getMqttConfig():
     
 def getWsConfig():
     conf = __checkConfig()
-    port = conf["ws_port"]
     topics = conf["topics"]
-    return port, topics
+    return topics
 

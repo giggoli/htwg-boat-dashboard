@@ -7,7 +7,7 @@ from dash.exceptions import PreventUpdate
 import json
 import pages.components.battery_cards as battery_cards
 
-dash.register_page(__name__, order=1)
+dash.register_page(__name__, order=1, path="/")
 
 layout = html.Div(
     children=[

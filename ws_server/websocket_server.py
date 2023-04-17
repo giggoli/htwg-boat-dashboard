@@ -52,7 +52,8 @@ async def main(port):
         await asyncio.Future()
 
 if __name__ == "__main__":
-    port, topics = cnf.getWsConfig()
+    port = 8123
+    topics = cnf.getWsConfig()
     convert_topic_to_ws_path(topics)
     setup_paths()
     asyncio.run(main(port))
