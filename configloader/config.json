@@ -1,14 +1,13 @@
 {
-    "broker_ip": "192.168.178.30",
+    "broker_ip": "localhost",
     "broker_port": 1883,
     "client_name": "dashboard",
     "topics":[
-        "batcoap",
-        "fuelcell",
-        "fuellevel",
-        "gps",
-        "solar",
-        "weather"
-
+        "batcoap/data",
+        "fuelcell/data",
+        "fuellevel/data",
+        "gps/data",
+        "solar/data",
+        "weather/data"
     ]
 }

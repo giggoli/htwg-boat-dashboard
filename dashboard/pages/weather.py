@@ -13,7 +13,7 @@ dash.register_page(__name__,order=6)
 layout = html.Div(
     children=[
         dcc.Store(id='store_weather', storage_type='session', data=dict()),
-        WebSocket(id="weather_ws", url='ws://127.0.0.1:8123/weather'),
+        WebSocket(id="weather_ws", url='ws://127.0.0.1:8123/weather/data'),
         dbc.Row(
             [
                 dbc.Col([

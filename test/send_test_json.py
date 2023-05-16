@@ -8,42 +8,35 @@ host = "127.0.0.1"
 def send_msg(payload, topic):
     sender.single(topic, payload, hostname=host)
 
-
-
-with open("test/JSON_files/fuellevel.json", "r") as file:
-    send_msg(file.read(), "fuellevel")
-    
+   
 
 if __name__ == "__main__":
     for i in range(100):
-        print(f"Remaining loops {10-i}")
+        print(f"Remaining loops {100-i}")
         with open("test/JSON_files/fuellevel.json", "r") as file:
-            send_msg(file.read(), "fuellevel")
+            send_msg(file.read(), "fuellevel/data")
         with open("test/JSON_files/gps.json", "r") as file:
-            send_msg(file.read(), "gps")
+            send_msg(file.read(), "gps/data")
         with open("test/JSON_files/fuelcell.json", "r") as file:
-            send_msg(file.read(), "fuelcell")
+            send_msg(file.read(), "fuelcell/data")
         with open("test/JSON_files/weather.json", "r") as file:
-            send_msg(file.read(), "weather")
+            send_msg(file.read(), "weather/data")
         with open("test/JSON_files/batcoap.json", "r") as file:
-            send_msg(file.read(), "batcoap")
+            send_msg(file.read(), "batcoap/data")
         with open("test/JSON_files/solar.json", "r") as file:
-            send_msg(file.read(), "solar")
-        
-
+            send_msg(file.read(), "solar/data")
         time.sleep(1)
-        with open("test/JSON_files/fuellevel2.json", "r") as file:
-            send_msg(file.read(), "fuellevel")
-        with open("test/JSON_files/gps2.json", "r") as file:
-            send_msg(file.read(), "gps")
-        with open("test/JSON_files/fuelcell2.json", "r") as file:
-            send_msg(file.read(), "fuelcell")
-        with open("test/JSON_files/weather2.json", "r") as file:
-            send_msg(file.read(), "weather")
-        with open("test/JSON_files/batcoap2.json", "r") as file:
-            send_msg(file.read(), "batcoap")
-        with open("test/JSON_files/solar2.json", "r") as file:
-            send_msg(file.read(), "solar")
-        
 
+        with open("test/JSON_files/fuellevel2.json", "r") as file:
+            send_msg(file.read(), "fuellevel/data")
+        with open("test/JSON_files/gps2.json", "r") as file:
+            send_msg(file.read(), "gps/data")
+        with open("test/JSON_files/fuelcell2.json", "r") as file:
+            send_msg(file.read(), "fuelcell/data")
+        with open("test/JSON_files/weather2.json", "r") as file:
+            send_msg(file.read(), "weather/data")
+        with open("test/JSON_files/batcoap2.json", "r") as file:
+            send_msg(file.read(), "batcoap/data")
+        with open("test/JSON_files/solar2.json", "r") as file:
+            send_msg(file.read(), "solar/data")
         time.sleep(1)

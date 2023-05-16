@@ -12,7 +12,7 @@ dash.register_page(__name__, order=1, path="/")
 layout = html.Div(
     children=[
         dcc.Store(id='store_battery', storage_type='session', data=dict()),
-        WebSocket(id="battery_ws", url='ws://127.0.0.1:8123/batcoap'),
+        WebSocket(id="battery_ws", url='ws://127.0.0.1:8123/batcoap/data'),
         dbc.Row(
             [
                 dbc.Col([
