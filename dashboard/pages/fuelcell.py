@@ -173,6 +173,13 @@ def get_fuelcell_storage(ts, data):
 def validate_message(msg):
     try:
         message = json.loads(msg)
+        keys = ["status_e_i", "status_e_s", "SOC_e_i", "SOC_e_s", "SOV_e_i",
+            "SOV_e_s","SOP_e_i","SOP_e_s","status","SOC","SOV","SOP",]
+        # check if message contain for each key a value
+        for key in keys:
+            if key not in message:
+                message[key] = "No Value received"
+
     except Exception as e:
         print(f"Dash exception: {e}")
         return [False, msg]

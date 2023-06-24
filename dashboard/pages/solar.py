@@ -400,6 +400,14 @@ def get_sytem_storage(ts, data):
 def validate_message(msg):
     try:
         message = json.loads(msg)
+        keys = ["BV", "BC", "BT", "CH", "CHM", "PVV", "PVC", "EQP", "EQTR",
+                "ROCH", "SYSALRM", "SYSAL", "SYSAH", "YTD", "MPTD", "YYD",
+                "MPYD", "ERROR", "YPVP", "UYPWR", "MPPT",]
+        # check if message contain for each key a value
+        for key in keys:
+            if key not in message:
+                message[key] = "No Value received"
+
     except Exception as e:
         print(f"Dash exception: {e}")
         return [False, msg]

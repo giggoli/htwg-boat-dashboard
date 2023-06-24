@@ -111,7 +111,7 @@ def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, 
         ns = set_gps_ns(message["ns"])
         long = set_gps_long(message["long"])
         ew = set_gps_ew(message["ew"])
-        speed = set_gps_speed(message["speed"] )
+        speed = set_gps_speed(message["speed"])
         variant = set_gps_variant(message["variat"])
         variant_ew = set_gps_variant_ew(message["variat_ew"])
         map = set_gps_map(message["lat"], message["long"])
@@ -171,6 +171,13 @@ def get_gps_storage(ts, data):
 def validate_message(msg):
     try:
         message = json.loads(msg)
+        keys = ["head", "valid", "lat", "ns", "long", "ew",
+                "speed", "variat", "variat_ew", "long"]
+        # check if message contain for each key a value
+        for key in keys:
+            if key not in message:
+                message[key] = "No Value received"
+                
     except Exception as e:
         print(f"Dash exception: {e}")
         return [False, msg]

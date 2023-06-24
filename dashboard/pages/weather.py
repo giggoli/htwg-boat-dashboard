@@ -148,6 +148,12 @@ def get_weather_storage(ts, data):
 def validate_message(msg):
     try:
         message = json.loads(msg)
+        keys = ["cur", "temp", "vis", "w_spd", "w_deg", "w_gust", "sunrise", "sunset"]
+        # check if message contain for each key a value
+        for key in keys:
+            if key not in message:
+                message[key] = "No Value received"
+
     except Exception as e:
         print(f"Dash exception: {e}")
         return [False, msg]

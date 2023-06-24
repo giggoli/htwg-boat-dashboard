@@ -492,6 +492,17 @@ def get_battery_storage(ts, data):
 def validate_message(msg):
     try:
         message = json.loads(msg)
+        keys = [ "BSR", "BLVW", "BHVW", "BORC", "BORE", "SoC", "E_NE", "E_ST", "E_OC",
+                "E_OV", "E_UV", "E_D", "E_OUT", "E_P", "E_C", "E_H", "E_CP", "E_CM",
+                "E_CPC", "E_CD", "E_S", "W_NE", "W_ST", "W_OC", "W_OV", "W_UV", "W_D",
+                "W_OUT", "W_P", "W_C", "E_NID", "BV", "BC", "B_MSCV", "B_mSCV", "B_HS",
+                "SoH", "B_HMT", "B_CMT", "SWV", "B_RS", "B_RC", "B_TR", "B_LC", "B_IM",
+                "B_PCC", "B_PDC","B_AC"]
+        # check if message contain for each key a value
+        for key in keys:
+            if key not in message:
+                message[key] = "No Value received"
+
     except Exception as e:
         print(f"Dash exception: {e}")
         return [False, msg]
