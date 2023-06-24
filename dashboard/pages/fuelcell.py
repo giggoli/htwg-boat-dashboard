@@ -13,7 +13,7 @@ dash.register_page(__name__, order=2)
 layout = html.Div(
     children=[
         dcc.Store(id='store_fuelcell', storage_type='session', data=dict()),
-        WebSocket(id="fuelcell_ws", url="ws://127.0.0.1:8123/fuelcell/data"),
+        WebSocket(id="fuelcell_ws", url="ws://127.0.0.1:8123/daq/fuelcell/data"),
         dbc.Row(
             [
                 dbc.Col([

@@ -14,7 +14,7 @@ if __name__ == "__main__":
     for i in range(100):
         print(f"Remaining loops {100-i}")
         with open("test/JSON_files/fuellevel.json", "r") as file:
-            send_msg(file.read(), "fuellevel/data")
+            send_msg(file.read(), "daq/fuellevel/data")
         with open("test/JSON_files/gps.json", "r") as file:
             send_msg(file.read(), "gps/data")
         with open("test/JSON_files/fuelcell.json", "r") as file:
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         time.sleep(1)
 
         with open("test/JSON_files/fuellevel2.json", "r") as file:
-            send_msg(file.read(), "fuellevel/data")
+            send_msg(file.read(), "daq/fuellevel/data")
         with open("test/JSON_files/gps2.json", "r") as file:
             send_msg(file.read(), "gps/data")
         with open("test/JSON_files/fuelcell2.json", "r") as file:

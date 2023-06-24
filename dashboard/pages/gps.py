@@ -14,7 +14,7 @@ dash.register_page(__name__, name='GPS',order=4)
 layout = html.Div(
     children=[
         dcc.Store(id='store_gps', storage_type='session', data=dict()),
-        WebSocket(id="gps_ws", url='ws://127.0.0.1:8123/gps/data'),
+        WebSocket(id="gps_ws", url='ws://127.0.0.1:8123/daq/gps/data'),
         dbc.Row(
             [
                 dbc.Col([

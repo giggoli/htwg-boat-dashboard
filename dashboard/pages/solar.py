@@ -15,7 +15,7 @@ layout = html.Div(
     children=[
         dcc.Store(id='store_solar', storage_type='session', data=dict()),
         dcc.Store(id='store_system', storage_type='session', data=dict()),
-        WebSocket(id="solar_ws", url='ws://127.0.0.1:8123/solar/data'),
+        WebSocket(id="solar_ws", url='ws://127.0.0.1:8123/daq/solar/data'),
         dbc.Row(
             [
                 dbc.Col([
