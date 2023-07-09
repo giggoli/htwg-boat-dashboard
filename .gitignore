@@ -107,3 +107,4 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+dockerimages/htwg-boat-dashboard_latest.tar.gz

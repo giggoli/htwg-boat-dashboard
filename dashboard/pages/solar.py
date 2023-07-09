@@ -148,8 +148,7 @@ layout = html.Div(
 )
 def update_solar(msg, BV, BC, BT, CH, CHM, PVV, PVC, EQP, EQTR, ROCH, SYSALRM, SYSAL, SYSAH, YTD,
                  MPTD, YYD, MPYD, ERROR, YPVP, UYPWR, MPPT, storage):
-    is_json, message_dict = validate_message(msg["data"])
-    message = message_dict["Solar"]
+    is_json, message = validate_message(msg["data"])
     if is_json:
         BV = set_solar_BV(message["BV"])
         BC = set_solar_BC(message["BC"])
@@ -305,8 +304,7 @@ def get_solar_storage(ts, data):
 )
 def update_system(msg, SolSerial, AIS, SYSBV, SYSBC, SYSBP, SYSSOC, SYSSTATE, SYSCAH, SYST2G,
                   PVCP, PVCC, SYSCP, SYSPWR, BUSCC, BUSCP, storage):
-    is_json, message_dict = validate_message(msg["data"])
-    message = message_dict["System"]
+    is_json, message = validate_message(msg["data"])
     if is_json:
         SolSerial = set_system_SolSerial(message["SolSerial"])
         AIS = set_system_AIS(message["AIS"])
@@ -402,7 +400,9 @@ def validate_message(msg):
         message = json.loads(msg)
         keys = ["BV", "BC", "BT", "CH", "CHM", "PVV", "PVC", "EQP", "EQTR",
                 "ROCH", "SYSALRM", "SYSAL", "SYSAH", "YTD", "MPTD", "YYD",
-                "MPYD", "ERROR", "YPVP", "UYPWR", "MPPT",]
+                "MPYD", "ERROR", "YPVP", "UYPWR", "MPPT", "SolSerial",
+                "AIS", "SYSBV", "SYSBC", "SYSBP","SYSSOC", "SYSSTATE",
+                "SYSCAH", "SYST2G", "PVCP", "PVCC", "SYSCP", "SYSPWR", "BUSCC", "BUSCP"]
         # check if message contain for each key a value
         for key in keys:
             if key not in message:

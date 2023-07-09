@@ -41,10 +41,7 @@ async def message_handler(websocket, path):
 
 async def ws_handler(websocket, path):
     if path in paths:
-        await message_handler(websocket, path)
-    else:
-        print(f"The path: {path} is not defined")
-        
+        await message_handler(websocket, path)        
 
 
 async def main(port):
