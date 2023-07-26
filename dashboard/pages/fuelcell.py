@@ -7,12 +7,13 @@ from dash.exceptions import PreventUpdate
 import json
 
 import pages.components.fuelcell_cards as fuelcell_cards
+import pages.sidebar as sidebar
+from pages.components.fuelcell_helper import *
 
 dash.register_page(__name__, order=2)
 
-layout = html.Div(
+page_layout = html.Div(
     children=[
-        dcc.Store(id='store_fuelcell', storage_type='session', data=dict()),
         WebSocket(id="fuelcell_ws", url="ws://127.0.0.1:8123/daq/fuelcell/data"),
         dbc.Row(
             [
@@ -50,6 +51,24 @@ layout = html.Div(
             ], className="row-buffer"
         ),
     ],
+)
+
+layout = dbc.Container(
+    dbc.Row(
+        [
+            dbc.Col(
+                [
+                    html.Br(),
+                    html.Br(),
+                    sidebar.sidebar
+                ],xs=4, sm=4, md=2, lg=2, xl=2, xxl=2),
+            dbc.Col(
+                [
+                    page_layout
+                ], xs=8, sm=8, md=10, lg=10, xl=10, xxl=10),
+        ]
+    ),
+    fluid=True
 )
 
 
@@ -91,8 +110,9 @@ layout = html.Div(
 )
 def update_fuelcell(msg, status_e_i, status_e_s, soc_e_i, soc_e_s, sov_e_i,
                     sov_e_s, sop_e_i, sop_e_s, status, soc, sov, sop, storage):
-    
-    is_json, message = validate_message(msg["data"])
+    if msg is None:
+        raise PreventUpdate
+    is_json, message = validate_fuelcell_message(msg["data"])
     if is_json:
             
         status_e_i = set_fuelcell_status_e_i(message["status_e_i"])
@@ -149,7 +169,6 @@ def update_fuelcell(msg, status_e_i, status_e_s, soc_e_i, soc_e_s, sov_e_i,
     inputs = [Input("store_fuelcell", "modified_timestamp")],
     state = [State("store_fuelcell", "data")]        
 )
-
 def get_fuelcell_storage(ts, data):
     if ts is None:
         raise PreventUpdate
@@ -169,101 +188,4 @@ def get_fuelcell_storage(ts, data):
         data.get("sop", "no Value received")
     ]
 
-
-def validate_message(msg):
-    try:
-        message = json.loads(msg)
-        keys = ["status_e_i", "status_e_s", "SOC_e_i", "SOC_e_s", "SOV_e_i",
-            "SOV_e_s","SOP_e_i","SOP_e_s","status","SOC","SOV","SOP",]
-        # check if message contain for each key a value
-        for key in keys:
-            if key not in message:
-                message[key] = "No Value received"
-
-    except Exception as e:
-        print(f"Dash exception: {e}")
-        return [False, msg]
-    else:
-        return [True, message]
-    
-def set_fuelcell_status_e_i(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_status_e_s(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_soc_e_i(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_soc_e_s(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_sov_e_i(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_sov_e_s(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_sop_e_i(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_sop_e_s(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_status(value):
-    if value == "0":
-        return dbc.Alert("OK", color="success", style={"textAlign": "center"})
-    elif value == "1":
-        return dbc.Alert("ERROR", color="danger", style={"textAlign": "center"})
-    else:
-        return dbc.Alert(f"ERROR {value} not defined", color="warning", style={"textAlign": "center"})
-
-def set_fuelcell_soc(value):
-    return dbc.Alert(f"{value} A", color="primary", style={"textAlign": "center"})
-
-def set_fuelcell_sov(value):
-    return dbc.Alert(f"{value} V", color="primary", style={"textAlign": "center"})
-
-def set_fuelcell_sop(value):
-    return dbc.Alert(f"{value} W", color="primary", style={"textAlign": "center"})
 

@@ -19,55 +19,17 @@ my_bootstrap = ("/assets/HTWG_theme.css")
 
 dashboard = dash.Dash(__name__, use_pages=True, external_stylesheets=[my_bootstrap])
 
-sidebar = dbc.Nav(
-    [
-        
-        dbc.NavLink(
-            [
-                html.Div(page["name"])
-            ],
-            href=page["path"],
-            active="exact"
-        )
-        for page in dash.page_registry.values()
-    ],
-    vertical = True,
-    pills = True,
-    id="menu"
-)
+dashboard.layout = html.Div(children=[
+    dcc.Store(id='store_battery', storage_type='session', data=dict()),
+    dcc.Store(id='store_fuelcell', storage_type='session', data=dict()),
+    dcc.Store(id='store_fuellevel', storage_type='session', data=dict()),
+    dcc.Store(id='store_gps', storage_type='session', data=dict()),
+    dcc.Store(id='store_solar', storage_type='session', data=dict()),
+    dcc.Store(id='store_system', storage_type='session', data=dict()),
+    dcc.Store(id='store_weather', storage_type='session', data=dict()),
+    dash.page_container
+])
 
-
-
-dashboard.layout = dbc.Container(
-    [
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.Div(children="Dashboard", className="myHeader")
-                    ]
-                )
-            ]
-        ),
-
-        html.Hr(),
-
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        sidebar
-                    ],xs=4, sm=4, md=2, lg=2, xl=2, xxl=2),
-
-                dbc.Col(
-                    [
-                        dash.page_container
-                    ], xs=8, sm=8, md=10, lg=10, xl=10, xxl=10),
-            ]
-        )
-    ],
-    fluid=True
-)
 
 if __name__ == "__main__":
     print("......Launching DASHBOARD......")
@@ -76,7 +38,7 @@ if __name__ == "__main__":
     print("start websocket server")
     proc_ws = Process(target=websocket_server.start_ws)
     proc_ws.start()
-    time.sleep(2)
+    time.sleep(5)
 
     print("start mqtt server")
     proc_mqtt = Process(target=mqtt_receiver.launch_mqtt)

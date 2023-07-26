@@ -8,12 +8,12 @@ import json
 import os
 
 import pages.components.gps_cards as gps_cards
+import pages.sidebar as sidebar
 
 dash.register_page(__name__, name='GPS',order=4)
 
-layout = html.Div(
+page_layout = html.Div(
     children=[
-        dcc.Store(id='store_gps', storage_type='session', data=dict()),
         WebSocket(id="gps_ws", url='ws://127.0.0.1:8123/daq/gps/data'),
         dbc.Row(
             [
@@ -70,6 +70,24 @@ layout = html.Div(
     ],
 )
 
+layout = dbc.Container(
+    dbc.Row(
+        [
+            dbc.Col(
+                [
+                    html.Br(),
+                    html.Br(),
+                    sidebar.sidebar
+                ],xs=4, sm=4, md=2, lg=2, xl=2, xxl=2),
+            dbc.Col(
+                [
+                    page_layout
+                ], xs=8, sm=8, md=10, lg=10, xl=10, xxl=10),
+        ]
+    ),
+    fluid=True
+)
+
 @callback(
     output = [
         Output("gps_HEAD", "children", allow_duplicate=True),
@@ -103,6 +121,8 @@ layout = html.Div(
     prevent_initial_call=True
 )
 def update_gps(msg, head, valid, lat, ns, long, ew, speed, variant, variant_ew, map, storage):
+    if msg is None:
+        raise PreventUpdate
     is_json, message = validate_message(msg["data"])
     if is_json:
         head = set_gps_head(message["head"])

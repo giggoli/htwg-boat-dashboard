@@ -16,27 +16,27 @@ if __name__ == "__main__":
         with open("test/JSON_files/fuellevel.json", "r") as file:
             send_msg(file.read(), "daq/fuellevel/data")
         with open("test/JSON_files/gps.json", "r") as file:
-            send_msg(file.read(), "gps/data")
+            send_msg(file.read(), "daq/gps/data")
         with open("test/JSON_files/fuelcell.json", "r") as file:
-            send_msg(file.read(), "fuelcell/data")
+            send_msg(file.read(), "daq/fuelcell/data")
         with open("test/JSON_files/weather.json", "r") as file:
-            send_msg(file.read(), "weather/data")
+            send_msg(file.read(), "daq/weather/data")
         with open("test/JSON_files/batcoap.json", "r") as file:
-            send_msg(file.read(), "batcoap/data")
+            send_msg(file.read(), "daq/battery/data")
         with open("test/JSON_files/solar.json", "r") as file:
-            send_msg(file.read(), "solar/data")
+            send_msg(file.read(), "daq/solar/data")
         time.sleep(1)
 
         with open("test/JSON_files/fuellevel2.json", "r") as file:
             send_msg(file.read(), "daq/fuellevel/data")
         with open("test/JSON_files/gps2.json", "r") as file:
-            send_msg(file.read(), "gps/data")
+            send_msg(file.read(), "daq/gps/data")
         with open("test/JSON_files/fuelcell2.json", "r") as file:
-            send_msg(file.read(), "fuelcell/data")
+            send_msg(file.read(), "daq/fuelcell/data")
         with open("test/JSON_files/weather2.json", "r") as file:
-            send_msg(file.read(), "weather/data")
+            send_msg(file.read(), "daq/weather/data")
         with open("test/JSON_files/batcoap2.json", "r") as file:
-            send_msg(file.read(), "batcoap/data")
+            send_msg(file.read(), "daq/battery/data")
         with open("test/JSON_files/solar2.json", "r") as file:
-            send_msg(file.read(), "solar/data")
+            send_msg(file.read(), "daq/solar/data")
         time.sleep(1)
